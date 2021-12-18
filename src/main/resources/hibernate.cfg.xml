@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- JDBC Database connection settings -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/testdb?useSSL=false&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Seoul</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">ksnd95680</property>
+		
+		<!-- Select our SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		
+		<!-- hibernate에 의해 생성된 sql문 console에 출력 -->
+		<property name="show_sql">true</property>
+		
+		<property name="current_session_context_class">thread</property>
+		
+		<!-- 애플리케이션 시작 시 테이블 자동 생성(테스트 시) / update(테스트 이후, 변경 사항만 업데이트) -->
+		<property name="hbm2ddl.auto">create</property>
+		
+		<!-- dbcp connection pool configuration -->
+		<property name="hibernate.dbcp.initialSize">5</property>
+		<property name="hibernate.dbcp.maxTotal">20</property>
+		<property name="hibernate.dbcp.maxIdle">10</property>
+		<property name="hibernate.dbcp.minIdle">5</property>
+		<property name="hibernate.dbcp.maxWaitMillis">-1</property>
+		
+		<mapping class="exampleHibernate.Product" />
+		<mapping class="exampleHibernate.Category" />
+	</session-factory>
+</hibernate-configuration>
