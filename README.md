@@ -8,8 +8,6 @@
 * **Eclispe**
   + Maven Project
     - Create a simple project 선택
-* **Server**
-  + Tomcat
 * **Database**
   + MySQL
   
